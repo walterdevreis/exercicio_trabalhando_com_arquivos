@@ -8,3 +8,5 @@ em uma subpasta chamada "out" a partir da pasta original do
 arquivo de origem, contendo apenas o nome e o valor total para
 aquele item (preço unitário multiplicado pela quantidade),
 conforme exemplo.
+
+![Exemplo:](https://github.com/walterdevreis/exercicio_trabalhando_com_arquivos/blob/main/img/exemplo.png)
