@@ -29,7 +29,6 @@ public class Program {
 
         System.out.println();
         try(BufferedReader br = new BufferedReader(new FileReader(path))){
-
             String line = br.readLine();
             while (line != null){
                 String[] item = line.split(",");
@@ -37,7 +36,6 @@ public class Program {
                 double price = Double.parseDouble(item[1]);
                 int quantity = Integer.parseInt(item[2]);
                 productsList.add(new Products(name, price, quantity));
-
                 line = br.readLine();
             }
 
@@ -57,7 +55,6 @@ public class Program {
             System.out.println("Error: " + e.getMessage());
         }
         try(BufferedReader br = new BufferedReader(new FileReader(targetFile))) {
-
             String line = br.readLine();
             while (line != null) {
                 System.out.println(line);
