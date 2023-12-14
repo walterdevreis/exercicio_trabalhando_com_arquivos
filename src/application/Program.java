@@ -27,6 +27,7 @@ public class Program {
 
         String targetFile = sourceFolder + "\\out\\summary.csv";
 
+        System.out.println();
         try(BufferedReader br = new BufferedReader(new FileReader(path))){
 
             String line = br.readLine();
@@ -45,6 +46,8 @@ public class Program {
                     bw.write(String.format("%s,%.2f", items.getName(), items.totalValue()));
                     bw.newLine();
                 }
+
+                System.out.println(targetFile + " File created successfully!");
             }
             catch (IOException e){
                 System.out.println("Error: " + e.getMessage());
@@ -52,6 +55,22 @@ public class Program {
         }
         catch (IOException e){
             System.out.println("Error: " + e.getMessage());
+        }
+        try(BufferedReader br = new BufferedReader(new FileReader(targetFile))) {
+
+            String line = br.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = br.readLine();
+            }
+        }
+        catch (IOException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        finally {
+            if(sc != null){
+                sc.close();
+            }
         }
     }
 }
